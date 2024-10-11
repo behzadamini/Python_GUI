@@ -43,6 +43,12 @@ class Calculator(QWidget):
         self.buttonsLayout.addWidget(self.clear_button, 4, 0, 1, 4)
         self.clear_button.clicked.connect(self.clear_display)
 
+        # Load QSS styles
+        self.load_styles()
+
+    def load_styles(self):
+        with open("style.qss", "r") as file:
+            self.setStyleSheet(file.read())
 
 
 
